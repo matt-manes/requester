@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "requester"
+description = ""
+version = "0.0.0"
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+keywords = []
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent"]
+
+[[project.authors]]
+name = "Matt Manes"
+email = "mattmanes@pm.me"
+
+[project.urls]
+Homepage = "https://github.com/matt-manes/requester"
+Documentation = "https://github.com/matt-manes/requester/tree/main/docs"
+"Source code" = "https://github.com/matt-manes/requester/tree/main/src/requester"
+
+[project.scripts]
+req = "requester.requester:main"
+
+[tool]
+[tool.pytest.ini_options]
+addopts = ["--import-mode=importlib"]
+pythonpath = "src"
+
+[tool.hatch.build.targets.sdist]
+exclude = [".coverage", ".pytest_cache", ".vscode", "tests", ".gitignore"]
